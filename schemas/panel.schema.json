@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "panel",
+  "required": [
+    "panel_id",
+    "purpose",
+    "section_mode",
+    "baseline_version",
+    "state",
+    "coverage",
+    "required_features",
+    "dependencies",
+    "pose_contract",
+    "resolution",
+    "selected_attempt_id"
+  ],
+  "properties": {
+    "panel_id": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "section_mode": {
+      "enum": [
+        "fixed",
+        "flexible"
+      ]
+    },
+    "baseline_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "state": {
+      "enum": [
+        "planned",
+        "ready",
+        "generated",
+        "in_review",
+        "accepted",
+        "rework_required",
+        "blocked",
+        "invalidated"
+      ]
+    },
+    "coverage": {
+      "type": "string"
+    },
+    "required_features": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pose_contract": {
+      "type": "object"
+    },
+    "resolution": {
+      "type": "object",
+      "required": [
+        "requested_px",
+        "actual_native_px",
+        "slot_px"
+      ],
+      "properties": {
+        "requested_px": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "actual_native_px": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "slot_px": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "selected_attempt_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

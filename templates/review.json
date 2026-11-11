@@ -1,0 +1,9 @@
+{
+  "review_id": "agent-assigned-id",
+  "attempt_id": "agent-assigned-id",
+  "baseline_version": null,
+  "reviewer": "not-yet-assigned",
+  "self_review": false,
+  "checks": [],
+  "outcome": "blocked"
+}

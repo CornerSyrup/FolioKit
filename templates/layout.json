@@ -1,0 +1,11 @@
+{
+  "layout_version": null,
+  "status": "draft",
+  "units": "pixels",
+  "pages": [],
+  "flexible_order": [
+    "section_order",
+    "rank",
+    "panel_id"
+  ]
+}

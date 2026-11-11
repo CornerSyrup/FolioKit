@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "task",
+  "required": [
+    "task_id",
+    "role_prompt",
+    "goal",
+    "workshop_root",
+    "inputs",
+    "output_dir",
+    "baseline_version",
+    "layout_version",
+    "blocked_by",
+    "acceptance_conditions",
+    "return_format"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "role_prompt": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "workshop_root": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_dir": {
+      "type": "string"
+    },
+    "baseline_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "layout_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "blocked_by": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "return_format": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

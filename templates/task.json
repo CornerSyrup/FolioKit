@@ -1,0 +1,19 @@
+{
+  "task_id": "agent-assigned-id",
+  "role_prompt": "prompts/01_reference_curator.md",
+  "goal": "Host supplies the concrete task after discovery",
+  "workshop_root": ".",
+  "inputs": [],
+  "output_dir": "workshop/tasks/agent-assigned-id",
+  "baseline_version": null,
+  "layout_version": null,
+  "blocked_by": [],
+  "acceptance_conditions": [],
+  "return_format": [
+    "completed outputs",
+    "evidence",
+    "blockers",
+    "next task",
+    "execution limitations"
+  ]
+}

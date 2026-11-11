@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "release",
+  "type": "object",
+  "required": [
+    "release_id",
+    "status",
+    "workshop_id",
+    "baseline_version",
+    "layout_version",
+    "selections",
+    "outputs",
+    "missing_panels",
+    "excluded_assets",
+    "validation_report"
+  ],
+  "properties": {
+    "release_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "partial",
+        "complete"
+      ]
+    },
+    "workshop_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "baseline_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "layout_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "selections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "panel_id",
+          "attempt_id",
+          "file",
+          "review_id"
+        ],
+        "properties": {
+          "panel_id": {
+            "type": "string"
+          },
+          "attempt_id": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string"
+          },
+          "review_id": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "required": [
+        "atlas_png",
+        "atlas_pdf",
+        "html_entry"
+      ],
+      "properties": {
+        "atlas_png": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "atlas_pdf": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "html_entry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "missing_panels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "excluded_assets": {
+      "type": "array"
+    },
+    "validation_report": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

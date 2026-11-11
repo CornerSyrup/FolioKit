@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "attempt",
+  "required": [
+    "attempt_id",
+    "panel_id",
+    "stage",
+    "route",
+    "baseline_version",
+    "created_at",
+    "prompt_file",
+    "request_file",
+    "tool",
+    "missing_metadata",
+    "outputs",
+    "parents",
+    "transformations",
+    "outcome"
+  ],
+  "properties": {
+    "attempt_id": {
+      "type": "string"
+    },
+    "panel_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stage": {
+      "enum": [
+        "draft",
+        "production",
+        "repair",
+        "derivative"
+      ]
+    },
+    "route": {
+      "enum": [
+        "fresh",
+        "crop_reconstruction",
+        "edit",
+        "conversion",
+        "interpolation"
+      ]
+    },
+    "baseline_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "created_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "prompt_file": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "request_file": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "tool": {
+      "type": "object",
+      "required": [
+        "provider",
+        "tool",
+        "reported_model_id",
+        "reported_model_version",
+        "quality_mode",
+        "job_id",
+        "seed"
+      ],
+      "properties": {
+        "provider": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tool": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reported_model_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reported_model_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "quality_mode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "job_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "seed": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "missing_metadata": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "file",
+          "sha256",
+          "format",
+          "dimensions_px",
+          "role"
+        ],
+        "properties": {
+          "file": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "format": {
+            "type": "string"
+          },
+          "dimensions_px": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "role": {
+            "enum": [
+              "original",
+              "working",
+              "crop",
+              "reconstruction",
+              "derived"
+            ]
+          }
+        }
+      }
+    },
+    "parents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transformations": {
+      "type": "array"
+    },
+    "outcome": {
+      "enum": [
+        "planned",
+        "generated",
+        "failed",
+        "blocked",
+        "unknown"
+      ]
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

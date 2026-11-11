@@ -1,0 +1,17 @@
+{
+  "panel_id": "agent-assigned-id",
+  "purpose": "To be discovered by the host",
+  "section_mode": "fixed",
+  "baseline_version": null,
+  "state": "planned",
+  "coverage": "To be established",
+  "required_features": [],
+  "dependencies": [],
+  "pose_contract": {},
+  "resolution": {
+    "requested_px": null,
+    "actual_native_px": null,
+    "slot_px": null
+  },
+  "selected_attempt_id": null
+}

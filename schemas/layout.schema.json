@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "layout",
+  "type": "object",
+  "required": [
+    "layout_version",
+    "status",
+    "units",
+    "pages",
+    "flexible_order"
+  ],
+  "properties": {
+    "layout_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "frozen",
+        "superseded"
+      ]
+    },
+    "units": {
+      "const": "pixels"
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "page_id",
+          "width",
+          "height",
+          "background",
+          "slots"
+        ],
+        "properties": {
+          "page_id": {
+            "type": "string"
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "background": {
+            "type": "string"
+          },
+          "slots": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "panel_id",
+                "x",
+                "y",
+                "width",
+                "height",
+                "fit"
+              ],
+              "properties": {
+                "panel_id": {
+                  "type": "string"
+                },
+                "x": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "y": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "width": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "fit": {
+                  "enum": [
+                    "exact",
+                    "pad",
+                    "declared_derivative"
+                  ]
+                },
+                "label": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "flexible_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

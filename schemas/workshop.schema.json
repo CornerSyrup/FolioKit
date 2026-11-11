@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "workshop",
+  "required": [
+    "schema_version",
+    "workshop_id",
+    "status",
+    "character_id",
+    "baseline_version",
+    "layout_version",
+    "decisions",
+    "open_questions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "workshop_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "enum": [
+        "discovery",
+        "baseline",
+        "planning",
+        "drafting",
+        "production",
+        "review",
+        "delivery",
+        "partial",
+        "complete"
+      ]
+    },
+    "character_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "baseline_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "layout_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "decisions": {
+      "type": "array"
+    },
+    "open_questions": {
+      "type": "array"
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

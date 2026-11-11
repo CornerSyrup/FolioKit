@@ -1,0 +1,16 @@
+{
+  "release_id": null,
+  "status": "draft",
+  "workshop_id": null,
+  "baseline_version": null,
+  "layout_version": null,
+  "selections": [],
+  "outputs": {
+    "atlas_png": [],
+    "atlas_pdf": null,
+    "html_entry": null
+  },
+  "missing_panels": [],
+  "excluded_assets": [],
+  "validation_report": null
+}

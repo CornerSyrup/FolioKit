@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1.0",
+  "workshop_id": null,
+  "status": "discovery",
+  "character_id": null,
+  "baseline_version": null,
+  "layout_version": null,
+  "decisions": [],
+  "open_questions": []
+}

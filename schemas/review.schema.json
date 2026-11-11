@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "review",
+  "required": [
+    "review_id",
+    "attempt_id",
+    "baseline_version",
+    "reviewer",
+    "self_review",
+    "checks",
+    "outcome"
+  ],
+  "properties": {
+    "review_id": {
+      "type": "string"
+    },
+    "attempt_id": {
+      "type": "string"
+    },
+    "baseline_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reviewer": {
+      "type": "string"
+    },
+    "self_review": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "feature_id",
+          "required",
+          "severity",
+          "result",
+          "evidence",
+          "repair"
+        ],
+        "properties": {
+          "feature_id": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "severity": {
+            "enum": [
+              "critical",
+              "major",
+              "minor"
+            ]
+          },
+          "result": {
+            "enum": [
+              "pass",
+              "fail",
+              "unknown",
+              "not_applicable"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "repair": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "outcome": {
+      "enum": [
+        "accepted",
+        "rework_required",
+        "blocked"
+      ]
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

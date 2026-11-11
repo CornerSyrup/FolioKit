@@ -1,0 +1,32 @@
+{
+  "attempt_id": "agent-assigned-id",
+  "panel_id": null,
+  "stage": "production",
+  "route": "fresh",
+  "baseline_version": null,
+  "created_at": null,
+  "prompt_file": null,
+  "request_file": null,
+  "tool": {
+    "provider": null,
+    "tool": null,
+    "reported_model_id": null,
+    "reported_model_version": null,
+    "quality_mode": null,
+    "job_id": null,
+    "seed": null
+  },
+  "missing_metadata": {
+    "provider": "Not yet queried or generated",
+    "tool": "Not yet queried or generated",
+    "reported_model_id": "Not yet queried or generated",
+    "reported_model_version": "Not yet queried or generated",
+    "quality_mode": "Not yet queried or generated",
+    "job_id": "Not yet queried or generated",
+    "seed": "Not yet queried or generated"
+  },
+  "outputs": [],
+  "parents": [],
+  "transformations": [],
+  "outcome": "planned"
+}

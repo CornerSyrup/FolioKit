@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "source",
+  "required": [
+    "source_id",
+    "type",
+    "locator",
+    "availability",
+    "sha256",
+    "authority_domains",
+    "annotations"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "image",
+        "text",
+        "document",
+        "model",
+        "other"
+      ]
+    },
+    "locator": {
+      "type": "string"
+    },
+    "availability": {
+      "enum": [
+        "available",
+        "unavailable",
+        "restricted"
+      ]
+    },
+    "sha256": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "authority_domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "annotations": {
+      "type": "array"
+    },
+    "extensions": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
